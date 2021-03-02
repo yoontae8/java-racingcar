@@ -1,6 +1,7 @@
 package study;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -23,6 +24,7 @@ public class SetTest {
         numbers.add(3);
     }
 
+    @DisplayName("set의 크기가 반환된다.")
     @Test
     void checkSize() {
         // Act
@@ -32,6 +34,7 @@ public class SetTest {
         assertThat(result).isEqualTo(3);
     }
 
+    @DisplayName("set의 1, 2, 3 포함 여부를 확인하면 true가 반환된다.")
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
     void contains(int source) {
@@ -42,6 +45,7 @@ public class SetTest {
         assertThat(result).isTrue();
     }
 
+    @DisplayName("set의 1, 2, 3, 4, 5의 포함 여부를 확인하면 true, true, true, false, false가 반환된다.")
     @ParameterizedTest
     @CsvSource(value = {"1,true", "2,true", "3,true", "4,false", "5,false"})
     void containsWithDifferentResultPair(int source, boolean expected) {

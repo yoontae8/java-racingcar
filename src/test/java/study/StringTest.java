@@ -8,6 +8,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class StringTest {
 
+    @DisplayName("\"1,\"2를 ,로 split했을 때 1과 2로 잘 분리된다.")
     @Test
     void splitNumbersWithComma() {
         // Arrange
@@ -20,6 +21,7 @@ public class StringTest {
         assertThat(result).contains("1", "2");
     }
 
+    @DisplayName("\"1\"을 ,로 split 했을 때 1만을 포함하는 배열이 반환된다.")
     @Test
     void splitSingleNumberWithComma() {
         // Arrange
@@ -32,6 +34,7 @@ public class StringTest {
         assertThat(result).containsExactly("1");
     }
 
+    @DisplayName("\"(1,2)\"에서 substring()으로 index 1부터 index 4까지 자르면 \"1,2\"가 반환된다.")
     @Test
     void removeParenthesisWithSubstring() {
         // Arrange
